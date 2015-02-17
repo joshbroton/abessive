@@ -16,10 +16,6 @@ module.exports = function(grunt) {
             sass: {
                 files: 'dev/scss/*.scss',
                 tasks: ['sass']
-            },
-            scripts: {
-                files: 'dev/js/site/*.js',
-                tasks: 'concat:watch'
             }
         },
         copy: {
@@ -37,35 +33,24 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'build/css/styles.min.css': 'build/css/styles.css'
+                    'build/css/styles.css': 'dev/css/styles.css'
                 }
-            }
-        },
-        concat: {
-            build: {
-                src: ['build/js/site/*.js'],
-                dest: 'build/js/site/concat.js'
-            },
-            watch: {
-                src: ['dev/js/site/*.js'],
-                dest: 'dev/js/app.js'
             }
         },
         uglify: {
             my_target: {
-                files: {
-                    'build/js/app.min.js': 'build/js/site/concat.js'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'dev/js/site',
+                    src: '**/*.js',
+                    dest: 'build/js/site'
+                }]
             }
         },
         clean: {
             build: ['build'],
             cleanup: [
-                'build/js/*.js',
-                '!build/js/*.min.js',
-                'build/js/site',
-                'build/css/styles.css',
-                'build/css/*.map',
+                'build/css/styles.css.map',
                 'build/scss'
             ]
         },
@@ -89,7 +74,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compress');
 
@@ -103,7 +87,6 @@ module.exports = function(grunt) {
         'clean:build',
         'copy',
         'cssmin',
-        'concat',
         'uglify',
         'clean:cleanup',
         'compress'
