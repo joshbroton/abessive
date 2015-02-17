@@ -1,18 +1,54 @@
 //! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
+*,
+*:before,
+*:after {
+    @include box-sizing();
+    word-wrap: break-word;
+}
 
-// 1. Set default font family to sans-serif.
+// 1. Set default font family.
 // 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
 html {
-    font-family: $textFont;         // 1
+    font-family: $baseFont;         // 1
     -ms-text-size-adjust: 100%;     // 2
     -webkit-text-size-adjust: 100%; // 2
 }
 
-// Remove default margin.
 body {
     margin: 0;
-    font-size: $bodyFontSize;
+    background: $bodyBGColor;
+    color: $baseFontColor;
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    font-weight: $baseFontWeight;
+    line-height: $baseLineHeight;
+}
+
+// Viewport declarations --> https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport
+@-webkit-viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@-moz-viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@-ms-viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@-o-viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1;
 }
 
 // HTML5 display definitions
@@ -29,7 +65,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -68,12 +103,81 @@ template {
 // Remove the gray background color from active links in IE 10.
 a {
     background-color: transparent;
+    color: $linkColor;
+    &:hover,
+    &:focus {
+        outline: 0;
+        color: $linkHover;
+    }
+    &:visited {
+        color: $linkVisited;
+    }
+    &:active {
+        outline: 0;
+        color: $linkActive;
+    }
 }
 
-// Improve readability when focused and also mouse hovered in all browsers.
-a:active,
-a:hover {
-    outline: 0;
+// Headings
+// ==========================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headingFont;
+    line-height: $headingLineHeight;
+    text-shadow: $headingTextShadow;
+}
+
+h1,
+.h1 {
+    margin-bottom: $baseLineHeight / 1.5 + 'em';
+    color: $h1Color;
+    font-size: $h1Size;
+    font-weight: $h1FontWeight;
+}
+
+h2,
+.h2 {
+    margin-bottom: $baseLineHeight / 1.5 + 'em';
+    color: $h2Color;
+    font-size: $h2Size;
+    font-weight: $h2FontWeight;
+}
+
+h3,
+.h3 {
+    margin-bottom: $baseLineHeight / 1.75 + 'em';
+    color: $h3Color;
+    font-size: $h3Size;
+    font-weight: $h3FontWeight;
+}
+
+h4,
+.h4 {
+    margin-bottom: $baseLineHeight / 1.75 + 'em';
+    color: $h4Color;
+    font-size: $h4Size;
+    font-weight: $h4FontWeight;
+}
+
+h5,
+.h5 {
+    margin-bottom: $baseLineHeight / 2 + 'em';
+    color: $h5Color;
+    font-size: $h5Size;
+    font-weight: $h5FontWeight;
+}
+
+h6,
+.h6 {
+    margin-bottom: $baseLineHeight / 2 + 'em';
+    color: $h6Size;
+    font-size: $h6Size;
+    font-weight: $h6FontWeight;
 }
 
 // Text-level semantics
@@ -91,6 +195,8 @@ strong {
 }
 
 // Address styling not present in Safari and Chrome.
+em,
+i,
 dfn {
     font-style: italic;
 }
@@ -168,8 +274,20 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
+    color: $codeColor;
+    font-family: $codeFontFamily;
+    font-size: $codeFontSize;
+}
+
+blockquote {
+    margin-bottom: $blockquoteMarginBottom;
+    padding-left: $blockquotePaddingLeft;
+    border-left: $blockquoteBorderWidth $blockquoteBorderStyle $blockquoteBorderColor;
+    color: $blockquoteColor;
+    font-family: $blockquoteFontFamily;
+    font-size: $blockquoteFontSize;
+    font-style: $blockquoteFontStyle;
+    font-weight: $blockquoteFontWeight;
 }
 
 // Forms
@@ -192,18 +310,105 @@ textarea {
     margin: 0;      // 3
 }
 
-// Address `overflow` set to `hidden` in IE 8/9/10/11.
-button {
-    overflow: visible;
+label {
+    color: $labelColor;
+    font-size: $labelFontSize;
+    font-weight: $labelFontWeight;
 }
 
-// Address inconsistent `text-transform` inheritance for `button` and `select`.
-// All other form control elements do not inherit `text-transform` values.
-// Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
-// Correct `select` style inheritance in Firefox.
-button,
-select {
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+input[type="password"],
+select,
+.textbox {
+    padding: $textboxPadding;
+    background-color: $textboxBackground;
+    border: $textboxBorderWidth $textboxBorderStyle $textboxBorderColor;
+    color: $textboxColor;
+    font-family: $baseFont;
+    font-size: $textboxFontSize;
     text-transform: none;
+    &:active,
+    &:focus {
+        outline-color: $textboxBorderColorActive;
+    }
+}
+
+// These have to be separate
+::-webkit-input-placeholder {
+    color: $textboxPlaceholderColor;
+    font-size: $textboxPlaceholderSize;
+    font-style: $textboxPlaceholderStyle;
+    //TODO: Test to see if font-family is still needed
+    font-family: $baseFont;
+}
+
+:-moz-placeholder {
+    color: $textboxPlaceholderColor;
+    font-size: $textboxPlaceholderSize;
+    font-style: $textboxPlaceholderStyle;
+    text-transform: uppercase;
+    font-family: $baseFont;
+}
+
+::-moz-placeholder {
+    color: $textboxPlaceholderColor;
+    font-size: $textboxPlaceholderSize;
+    font-style: $textboxPlaceholderStyle;
+    text-transform: uppercase;
+    font-family: $baseFont;
+}
+
+:-ms-input-placeholder {
+    color: $textboxPlaceholderColor;
+    font-size: $textboxPlaceholderSize;
+    font-style: $textboxPlaceholderStyle;
+    text-transform: uppercase;
+    font-family: $baseFont;
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: $buttonPadding;
+    overflow: visible;
+    background-color: $buttonBackground;
+    //@include vertical($buttonBackground, $buttonBackground2);
+    border: $buttonBorderWidth $buttonBorderStyle $buttonBorderColor;
+    color: $buttonColor;
+    font-family: $buttonFont;
+    font-size: $buttonFontSize;
+    font-weight: $buttonFontWeight;
+    text-transform: $buttonTextTransform;
+    cursor: pointer;
+    &.alt {
+        background-color: $buttonAltBackground;
+        //@include vertical($buttonAltBackground, $buttonAltBackground2);
+    }
+    &:active,
+    &:focus {
+        outline-color: $buttonOutlineColor;
+    }
+    &:hover,
+    &:focus,
+    &:visited {
+        color: $buttonColor;
+        text-decoration: none;
+        border: $buttonBorderWidth $buttonBorderStyle $buttonBorderColor;
+    }
 }
 
 // 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -220,9 +425,15 @@ input[type="submit"] {
 }
 
 // Re-set default cursor for disabled elements.
-button[disabled],
-html input[disabled] {
-    cursor: default;
+button,
+html input,
+textarea,
+select {
+    &[disabled],
+    &[readonly] {
+        cursor: default;
+        opacity: .5;
+    }
 }
 
 // Remove inner padding and border in Firefox 4+.
@@ -300,15 +511,22 @@ optgroup {
 }
 
 // Tables
-   ==========================================================================
+// ==========================================================================
 
 // Remove most spacing between table cells.
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    font-size: $tableFontSize;
 }
-
+tr {
+    &:nth-child(even) {
+        td {
+            background: $tableStripe;
+        }
+    }
+}
 td,
 th {
-    padding: 0;
+    padding: $tableCellPadding;
 }

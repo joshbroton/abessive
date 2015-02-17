@@ -20,45 +20,46 @@ $widescreenBreakpoint: 79.5em;		// <1280px
 $superWideBreakpoint: 112.5em;		// <1808px
 
 // Root
-$bodyColor: #fff;
+$bodyBGColor: #fff;
 $bodyFontSize: 100%;
 $columnMargin: .5em;
 $gutter: 1em;
 $warningColor: #f00;
 
 // Typography
-$textFont: 'Open Sans', sans-serif;
-$textColor: $midGrey;
-$textFontSize: 1rem;
-$baselineHeight: 1.35;
+$baseFont: 'Open Sans', sans-serif;
+$baseFontColor: $midGrey;
+$baseFontSize: 1rem;
 $baseFontWeight: 300;
+$baseLineHeight: 1.35;
 
 // Heading Typography
-$headingFont: $textFont;
+$headingFont: $baseFont;
+$headingFontColor: $baseFontColor;
 $headingLineHeight: 1.1;
 $headingTextShadow: none;
 
-$h1Color: $textColor;
+$h1Color: $headingFontColor;
 $h1Size: 1.875em;
 $h1FontWeight: 300;
 
-$h2Color: $textColor;
+$h2Color: $headingFontColor;
 $h2Size: 1.5em;
 $h2FontWeight: 300;
 
-$h3Color: $textColor;
+$h3Color: $headingFontColor;
 $h3Size: 1.375em;
 $h3FontWeight: 300;
 
-$h4Color: $textColor;
+$h4Color: $headingFontColor;
 $h4Size: 1.25em;
 $h4FontWeight: 300;
 
-$h5Color: $textColor;
+$h5Color: $headingFontColor;
 $h5Size: 1.125em;
 $h5FontWeight: 300;
 
-$h6Color: $textColor;
+$h6Color: $headingFontColor;
 $h6Size: 1em;
 $h6FontWeight: 300;
 
@@ -68,7 +69,7 @@ $codeFont: monospace;
 $linkColor: #00f;
 $linkHover: darken($linkColor,5%);
 $linkVisited: darken($linkColor,10%);
-$linkFocus: darken($linkColor,15%);
+$linkActive: darken($linkColor,15%);
 $linkWeight: bold;
 
 // Forms
@@ -77,43 +78,37 @@ $textboxBorderColor: $lighterGrey;
 $textboxBorderColorActive: #f00;
 $textboxBorderWidth: (1rem/16);
 $textboxBorderStyle: solid;
-$textboxColor: $textColor;
+$textboxColor: $baseFontColor;
+$textboxFontSize: 1rem;
+$textboxPadding: (6rem/16) 1.5rem;
 $textboxPlaceholderColor: $midGrey;
 $textboxPlaceholderSize: 1em;
 $textboxPlaceholderStyle: normal; //Change to italic if you want placeholder text to be italic.
-$textboxPadding: (6rem/16) 1.5rem;
-$textboxOutline: none;
-$textboxMaxWidth: 30rem;
 
 $labelFontSize: (18rem/16);
-$labelColor: $textColor;
+$labelColor: $baseFontColor;
 $labelFontWeight: bold;
 
 $buttonBackground: white;
 //$buttonBackground2: $siteLightGreen; //Uncomment if you want a gradient background on a button. Also uncomment gradient in
-$buttonBorderColor: $textColor;
+$buttonBorderColor: $baseFontColor;
 $buttonBorderWidth: .25rem;
 $buttonBorderStyle: solid;
-$buttonColor: $textColor;
+$buttonColor: $baseFontColor;
 $buttonOutlineColor: none;
-$buttonFont: $textFont;
+$buttonFont: $baseFont;
 $buttonFontSize: (14rem/16);
 $buttonFontWeight: 600;
 $buttonPadding: .5rem 1.5rem;
+$buttonTextTransform: none;
 
-$buttonAltBackground: $textColor;
+$buttonAltBackground: $baseFontColor;
 //$buttonAltBackground2: $siteLightGrey;
 
 // Tables
-$tableBackground: transparent;
 $tableCellPadding: .25rem;
 $tableStripe: $lighterGrey;
 $tableFontSize: (14rem/16);
-$tableLineHeight: 1.4;
-$tableBorderWidth: (1rem/16);
-$tableBorderStyle: solid;
-$tableBorderColor: $lightGrey;
-$tableHover: transparent;
 
 // Blockquotes
 $blockquoteMarginBottom: (14rem/16);
@@ -128,10 +123,6 @@ $blockquoteFontStyle: italic;
 $blockquoteFontWeight: 200;
 
 // Code/Pre blocks
-$codeMargin: 1rem 0;
-$codePadding: $gutter / 2;
-$codeBackground: white;
-$codeBorder: 0;
 $codeFontFamily: $codeFont;
 $codeFontSize: (14rem/16);
-$codeColor: $textColor;
+$codeColor: $baseFontColor;
