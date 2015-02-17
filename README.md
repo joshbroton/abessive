@@ -1,2 +1,3 @@
-# new-wordpress-boilerplate
-A new (and yet unnamed) boilerplate for WordPress themes
+# Abessive
+a•bes•sive : indicating absence or lack
+A new theme boilerplate unique for what it lacks.
