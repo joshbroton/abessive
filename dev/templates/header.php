@@ -24,9 +24,18 @@
 <![endif]-->
 <div class="wrapper">
     <header class="body--header" role="banner">
+        <?php if(is_front_page()) : ?>
         <h1 class="blog-name">
             <?php bloginfo('name'); ?>
         </h1>
+        <?php else : ?>
+        <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+            <h1 class="blog-name">
+                <?php bloginfo('name'); ?>
+            </h1>
+        </a>
+        <?php endif; ?>
+
         <nav class="main-nav" role="navigation">
             <?php
             if (has_nav_menu('primary_navigation')) :
