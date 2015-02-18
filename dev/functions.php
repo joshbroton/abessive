@@ -41,6 +41,7 @@ if (!function_exists('abessive_theme_init')) {
         // automatic feeds
         add_theme_support('automatic-feed-links');
     }
-    //thumbs up, lets go!
-    abessive_theme_init();
 }
+
+//thumbs up, lets go!
+abessive_theme_init();
