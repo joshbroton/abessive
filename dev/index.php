@@ -15,26 +15,26 @@
                     by
                     <span class="byline--author"><?php the_author_posts_link(); ?></span>
                 </aside>
-                <section class="post--content">
-                    <?php if ( has_post_thumbnail() ) : ?>
-                    <figure class="post--thumbnail">
-                        <?php the_post_thumbnail(); ?>
-                    </figure>
-                    <?php endif; ?>
-                    <section class="post--content_inner">
-                        <?php the_content(); ?>
-                    </section>
-                </section>
-                <footer class="post--metadata">
-                    <section class="post--categories">
-                        Categories: <?php the_category(', '); ?>
-                    </section>
-                    <section class="post--tags">
-                        <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
-                    </section>
-                </footer>
-                <hr />
             </header>
+            <section class="post--content">
+                <?php if ( has_post_thumbnail() ) : ?>
+                <figure class="post--thumbnail">
+                    <?php the_post_thumbnail(); ?>
+                </figure>
+                <?php endif; ?>
+                <div class="post--content_inner">
+                    <?php the_content(); ?>
+                </div>
+            </section>
+            <footer class="post--metadata">
+                <section class="post--categories">
+                    Categories: <?php the_category(', '); ?>
+                </section>
+                <section class="post--tags">
+                    <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
+                </section>
+            </footer>
+            <hr />
         </article>
         <?php endwhile; ?>
         <nav class="prev-next-nav">
@@ -45,7 +45,6 @@
                 <?php echo previous_posts_link('Newer Entries &raquo;') ?>
             </div>
         </nav>
-        <?php wp_link_pages(); ?>
         <?php else : ?>
         <article class="post post_404">
             <header class="post--header">
