@@ -37,7 +37,7 @@ if (!function_exists('abessive_theme_init')) {
         //Enable custom menus
         add_theme_support('menus');
         // Remove the admin bar
-        show_admin_bar(false);
+        //show_admin_bar(false); // Uncomment this line to remove the admin bar
         // automatic feeds
         add_theme_support('automatic-feed-links');
     }
