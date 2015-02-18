@@ -36,10 +36,10 @@ if (!function_exists('abessive_theme_init')) {
         add_filter('image_send_to_editor', 'abessive_remove_width_attribute', 10);
         //Enable custom menus
         add_theme_support('menus');
-        // Remove the admin bar
-        //show_admin_bar(false); // Uncomment this line to remove the admin bar
         // automatic feeds
         add_theme_support('automatic-feed-links');
+        // Remove the admin bar
+        //show_admin_bar(false); // Uncomment this line to remove the admin bar
     }
 }
 
