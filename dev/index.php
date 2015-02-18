@@ -1,3 +1,5 @@
+<!-- TEMPLATE FOR A POST LIST -->
+
 <?php get_template_part('templates/header'); ?>
 
 <section class="content_wrapper">

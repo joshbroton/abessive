@@ -1,11 +1,11 @@
 <?php
 
-//Post Thumbnail Support
+// Post Thumbnail Support
 if (!function_exists('abessive_post_thumbnail_support')) {
     function abessive_post_thumbnail_support()
     {
         add_theme_support('post-thumbnails');
-        set_post_thumbnail_size(1200, 600);
+        //set_post_thumbnail_size(1200, 600);   // Uncomment to add post thumbnail sizes
     }
 }
 
@@ -28,6 +28,7 @@ if (!function_exists('abessive_set_max_image_width')) {
     }
 }
 
+// Remove the inline width/height attributes on images, because it's not 2003
 if (!function_exists('abessive_remove_width_attribute')) {
     function abessive_remove_width_attribute($html)
     {

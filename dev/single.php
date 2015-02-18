@@ -1,3 +1,5 @@
+<!-- TEMPLATE FOR A SINGLE POST -->
+
 <?php get_template_part('templates/header'); ?>
 
 <section class="content_wrapper">
