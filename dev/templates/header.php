@@ -17,6 +17,8 @@
     <link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
 
     <?php wp_head(); ?>
+
+    <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]>
