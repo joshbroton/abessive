@@ -6,8 +6,8 @@
     <main class="content" role="main">
         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> role="article">
-            <header class="post--header">
-                <h1 class="post--title">
+            <header class="content--header post--header">
+                <h1 class="content--title post--title">
                     <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                 </h1>
                 <aside class="byline vcard">
@@ -20,11 +20,11 @@
             </header>
             <section class="post--content">
                 <?php if ( has_post_thumbnail() ) : ?>
-                <figure class="post--thumbnail">
+                <figure class="content--thumbnail post--thumbnail">
                     <?php the_post_thumbnail(); ?>
                 </figure>
                 <?php endif; ?>
-                <div class="post--content_inner">
+                <div class="content_inner post--content_inner">
                     <?php the_content(); ?>
                 </div>
             </section>
@@ -49,13 +49,15 @@
         </nav>
         <?php else : ?>
         <article class="post post_404">
-            <header class="post--header">
-                <h1 class="post--title">
+            <header class="content--header post--header">
+                <h1 class="content--title post--title">
                     Oops! Post not found.
                 </h1>
             </header>
             <section class="post--content">
-                Something has gone very, very, VERY wrong. Can you make sure you clicked on the right thing?
+                <div class="content_inner page--content_inner">
+                    Something has gone very, very, VERY wrong. Can you make sure you clicked on the right thing?
+                </div>
             </section>
             <footer class="post--metadata">
                 You've gotten this error message from the index.php file in the template.

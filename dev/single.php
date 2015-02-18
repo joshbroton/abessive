@@ -6,8 +6,8 @@
     <main class="content" role="main">
         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-                <header class="post--header">
-                    <h1 class="post--title" title="<?php the_title_attribute(); ?>" itemprop="headline">
+                <header class="content--header post--header">
+                    <h1 class="content--title post--title" title="<?php the_title_attribute(); ?>" itemprop="headline">
                         <?php the_title(); ?>
                     </h1>
                     <aside class="byline vcard">
@@ -20,11 +20,11 @@
                 </header>
                 <section class="post--content clearfix"  itemprop="articleBody">
                     <?php if ( has_post_thumbnail() ) : ?>
-                        <figure class="post--thumbnail">
-                            <?php the_post_thumbnail(); ?>
-                        </figure>
+                    <figure class="content--thumbnail post--thumbnail">
+                        <?php the_post_thumbnail(); ?>
+                    </figure>
                     <?php endif; ?>
-                    <div class="post--content_inner">
+                    <div class="content_inner post--content_inner">
                         <?php the_content(); ?>
                     </div>
                 </section>
@@ -36,9 +36,13 @@
                         <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
                     </section>
                 </footer>
-                <section class="comments">
-                    <?php comments_template( '/comments.php' ); ?>
-                </section>
+                <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() && get_comments_number() != 0 ) : ?>
+                    <section class="comments post--comments">
+                        <?php comments_template(); ?>
+                    </section>
+                <?php endif; ?>
             </article>
             <?php if(is_paged()) : ?>
             <hr />
@@ -48,21 +52,21 @@
             <?php endif; ?>
         <?php endwhile; ?>
         <?php else : ?>
-        <article class="post_404">
-            header class="post--header">
-            <h1 class="post--title">
-                Oops! Post not found.
-            </h1>
+        <article class="post post_404">
+            <header class="content--header post--header">
+                <h1 class="content--title post--title">
+                    Oops! Post not found.
+                </h1>
             </header>
             <section class="post--content">
-                Something has gone very, very, VERY wrong. Can you make sure you clicked on the right thing?
+                <div class="content_inner page--content_inner">
+                    Something has gone very, very, VERY wrong. Can you make sure you clicked on the right thing?
+                </div>
             </section>
-            <footer class="post--metadata">
-                You've gotten this error message from the index.php file in the template.
-            </footer>
         </article>
         <?php endif; ?>
     </main>
+    <?php get_template_part('templates/sidebar'); ?>
 </section>
 
 <?php get_template_part('templates/footer'); ?>
