@@ -17,3 +17,20 @@ if (!function_exists('abessive_post_image_html')) {
         esc_attr(get_post_field('post_title', $post_id)) . '">' . $html . '</a>';
     }
 }
+
+// Set the max image width via $content_width
+if (!function_exists('abessive_set_max_image_width')) {
+    function abessive_set_max_image_width()
+    {
+        if (!isset($content_width)) {
+            $content_width = 1200;
+        }
+    }
+}
+
+if (!function_exists('abessive_remove_width_attribute')) {
+    function abessive_remove_width_attribute($html)
+    {
+        return preg_replace('/(width|height)="\d*"\s/', "", $html);
+    }
+}
