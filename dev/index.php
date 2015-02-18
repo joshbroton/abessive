@@ -1,6 +1,6 @@
 <?php get_template_part('templates/header'); ?>
 
-<section class="content">
+<section class="content_wrapper">
     <main class="content" role="main">
         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> role="article">
