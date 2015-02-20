@@ -50,7 +50,7 @@
             </section>
         </article>
         <?php endif; ?>
-    </section>
+    </main>
     <?php get_template_part('templates/sidebar'); ?>
 </section>
 
