@@ -165,13 +165,15 @@ sub {
   bottom: -0.25em; }
 
 img {
+  max-width: 100%;
+  height: auto;
   border: 0; }
 
 svg:not(:root) {
   overflow: hidden; }
 
 figure {
-  margin: 1em 40px; }
+  margin: 0; }
 
 hr {
   -moz-box-sizing: content-box;
@@ -260,6 +262,9 @@ select,
   .textbox:focus {
     outline-color: #f00; }
 
+textarea {
+  display: block; }
+
 ::-webkit-input-placeholder {
   color: gray;
   font-size: 1em;
@@ -297,7 +302,7 @@ input[type="reset"] {
   height: auto;
   padding: 0.5rem 1.5rem;
   overflow: visible;
-  background-color: white;
+  background-color: #fff;
   border: 0.25rem solid gray;
   color: gray;
   font-family: "Open Sans", sans-serif;
@@ -402,6 +407,7 @@ table {
   border-spacing: 0;
   font-size: 0.875rem; }
 
+tr:nth-child(even) th,
 tr:nth-child(even) td {
   background: #e6e6e6; }
 

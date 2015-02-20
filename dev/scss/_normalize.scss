@@ -241,6 +241,8 @@ sub {
 
 // Remove border when inside `a` element in IE 8/9/10.
 img {
+    max-width: 100%;
+    height: auto;
     border: 0;
 }
 
@@ -252,9 +254,9 @@ svg:not(:root) {
 // Grouping content
 // ==========================================================================
 
-// Address margin not present in IE 8/9 and Safari.
+// Remove margin present everywhere but IE
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 // Address differences between Firefox and other browsers.
@@ -340,6 +342,10 @@ select,
     &:focus {
         outline-color: $textboxBorderColorActive;
     }
+}
+
+textarea {
+    display: block;
 }
 
 // These have to be separate
@@ -521,6 +527,7 @@ table {
 }
 tr {
     &:nth-child(even) {
+        th,
         td {
             background: $tableStripe;
         }
