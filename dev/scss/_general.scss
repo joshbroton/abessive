@@ -1,0 +1,76 @@
+.youtube {
+    position: relative;
+    z-index: 1;
+    height: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-top: 56.25%;
+    &.standard {
+        padding-top: 75%;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.alignright,
+.alignleft,
+.aligncenter,
+.alignnone {
+    display: block;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+}
+
+.wp-caption {
+    border: (1rem/16) solid $lightGrey;
+    padding: .25rem;
+    text-align: center;
+}
+
+.wp-caption-text,
+.gallery-caption {
+    font-size: .75rem;
+    font-style: italic;
+}
+
+.sticky {
+    padding: 1rem;
+    background: darken($bodyColor, 5%);
+}
+
+.alert {
+    font-weight: bold;
+    color: $midGrey;
+}
+
+
+
+@media only screen and (min-width: #{$smallBreakpoint}) {
+    .alignright {
+        float: right;
+        max-width: 50%;
+        margin: 0 0 1rem 1rem;
+    }
+
+    .alignleft {
+        float: left;
+        max-width: 50%;
+        margin: 0 1rem 1rem 0;
+    }
+
+    .aligncenter {
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .alignnone {
+        float: none;
+        max-width: 100%;
+        margin: 0 1rem 1rem 0;
+    }
+}
