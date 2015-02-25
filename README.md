@@ -15,5 +15,5 @@ A new theme boilerplate unique for what it lacks.
 
 ###Based on these projects:
 * [HTML5 Boilerplate v5.0.0](https://html5boilerplate.com/)
-* Lemonly Project Boilerplate v0.3
+* Lemonly Project Boilerplate v0.2.1
 * Lemonly HTML/CSS/JS style guides
