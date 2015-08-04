@@ -68,4 +68,4 @@
     <?php get_template_part('templates/sidebar'); ?>
 </section>
 
-<?php get_footer(); ?>
+<?php get_template_part('templates/footer'); ?>
