@@ -40,7 +40,7 @@
 
 .sticky {
     padding: 1rem;
-    background: darken($bodyColor, 5%);
+    background: darken($bodyBGColor, 5%);
 }
 
 .alert {
@@ -50,7 +50,7 @@
 
 
 
-@media only screen and (min-width: #{$smallBreakpoint}) {
+@media only screen and (min-width: #{$smallTabletBreakpoint}) {
     .alignright {
         float: right;
         max-width: 50%;
