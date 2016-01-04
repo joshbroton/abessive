@@ -85,45 +85,59 @@ h6 {
   font-family: "Open Sans", sans-serif;
   line-height: 1.1;
   text-shadow: none; }
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0; }
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child {
+    margin-bottom: 0; }
 
 h1,
 .h1 {
-  margin-bottom: "0.9em";
+  margin: 0.9em 0;
   color: gray;
   font-size: 1.875em;
   font-weight: 300; }
 
 h2,
 .h2 {
-  margin-bottom: "0.9em";
+  margin: 0.9em 0;
   color: gray;
   font-size: 1.5em;
   font-weight: 300; }
 
 h3,
 .h3 {
-  margin-bottom: "0.77143em";
+  margin: 0.77143em 0;
   color: gray;
   font-size: 1.375em;
   font-weight: 300; }
 
 h4,
 .h4 {
-  margin-bottom: "0.77143em";
+  margin: 0.77143em 0;
   color: gray;
   font-size: 1.25em;
   font-weight: 300; }
 
 h5,
 .h5 {
-  margin-bottom: "0.675em";
+  margin: 0.675em 0;
   color: gray;
   font-size: 1.125em;
   font-weight: 300; }
 
 h6,
 .h6 {
-  margin-bottom: "0.675em";
+  margin: 0.675em 0;
   color: 1em;
   font-size: 1em;
   font-weight: 300; }
@@ -199,6 +213,13 @@ blockquote {
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 200; }
+
+p {
+  margin: 1rem 0; }
+  p:first-child {
+    margin-top: 0; }
+  p:last-child {
+    margin-bottom: 0; }
 
 button,
 input,
@@ -308,6 +329,7 @@ input[type="reset"] {
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
+  text-decoration: none;
   text-transform: none;
   cursor: pointer; }
   button.alt,
