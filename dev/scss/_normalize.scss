@@ -414,6 +414,7 @@ input[type="reset"] {
     font-family: $buttonFont;
     font-size: $buttonFontSize;
     font-weight: $buttonFontWeight;
+    text-decoration: $buttonTextDecoration;
     text-transform: $buttonTextTransform;
     cursor: pointer;
     &.alt {
