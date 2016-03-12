@@ -1,10 +1,10 @@
-    <footer class="body--footer" role="contentinfo">
-        <section class="footer--copyright">
+    <footer class="body__footer" role="contentinfo">
+        <section class="footer__copyright">
             This is the <a href="http://github.com/joshbroton/abessive">Abessive Theme Boilerplate</a> and is licensed under the GPLv2 or later.
         </section>
         <?php if (has_nav_menu('footer_navigation')) : ?>
         <nav class="secondary-nav" role="navigation">
-            <?php wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'secondary-nav--menu')); ?>
+            <?php wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'secondary-nav__menu')); ?>
         </nav>
         <?php endif; ?>
     </footer>

@@ -1,6 +1,6 @@
 <!-- TEMPLATE FOR THE SIDEBAR -->
 
-<section id="mainSidebar" class="sidebar content--sidebar" role="complimentary">
+<section id="mainSidebar" class="sidebar content__sidebar" role="complimentary">
     <?php if ( is_active_sidebar( 'main-sidebar' ) ) : ?>
         <?php dynamic_sidebar( 'main-sidebar' ); ?>
     <?php else : ?>
