@@ -1,4 +1,4 @@
-#Abessive v1.1
+#Abessive v1.2
 a•bes•sive : indicating absence or lack
 
 A new theme boilerplate unique for what it lacks.
@@ -8,7 +8,7 @@ A new theme boilerplate unique for what it lacks.
 ###Assumptions I've Made:
 * You want a WordPress theme
 * Sass for CSS preprocessing
-* Loose BEM CSS syntax
+* BEM CSS syntax
 * Gulp for tasks
 * Posts and pages
 * Two menus (header and footer)
