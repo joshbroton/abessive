@@ -32,7 +32,7 @@ gulp.task('html', function() {
 
 gulp.task('babel', function() {
     gulp.src(roots.dev + 'js/**/*.es6')
-        .pipe(babel())
+        .pipe(babel().on('error', console.log))
         .pipe(gulp.dest(roots.dev + '/js'))
         .pipe(connect.reload());
 });
@@ -56,6 +56,7 @@ gulp.task('css', function() {
 
 gulp.task('watch', ['connect'], function() {
     gulp.watch([roots.dev + '**/*.html'], ['html']);
+    gulp.watch([roots.dev + '**/*.php'], ['html']);
     gulp.watch([roots.dev + 'js/**/*.es6'], ['babel']);
     gulp.watch([roots.dev + 'scss/**/*.scss'], ['sass']);
     gulp.watch([roots.dev + 'css/**/*.css'], ['css']);

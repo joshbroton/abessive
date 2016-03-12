@@ -80,10 +80,13 @@ $textboxBorderWidth: (1rem/16);
 $textboxBorderStyle: solid;
 $textboxColor: $baseFontColor;
 $textboxFontSize: 1rem;
-$textboxPadding: (6rem/16) 1.5rem;
+$textboxFontWeight: normal;
+$textboxTextTransform: none;
+$textboxPadding: 0 1.5rem;
+$textboxLineHeight: (28rem/16);     //Whatever you set here, will be used as a height + border width * 2
 $textboxPlaceholderColor: $midGrey;
 $textboxPlaceholderSize: 1em;
-$textboxPlaceholderStyle: normal; //Change to italic if you want placeholder text to be italic.
+$textboxPlaceholderStyle: normal;   //Change to italic if you want placeholder text to be italic.
 
 $labelFontSize: (18rem/16);
 $labelColor: $baseFontColor;
@@ -95,7 +98,8 @@ $buttonBorderColor: $baseFontColor;
 $buttonBorderWidth: .25rem;
 $buttonBorderStyle: solid;
 $buttonColor: $baseFontColor;
-$buttonOutlineColor: none;
+$buttonOutline: none;            //Uncomment if you want to turn off outlines entirely, or change them to a solid color
+//$buttonOutlineColor: red;      //Uncomment if you just want to change the color of the default browser "glow"
 $buttonFont: $baseFont;
 $buttonFontSize: (14rem/16);
 $buttonFontWeight: 600;
