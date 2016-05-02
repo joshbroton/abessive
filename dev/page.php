@@ -11,7 +11,7 @@
                         <?php the_title(); ?>
                     </h1>
                 </header>
-                <section class="page__content clearfix"  itemprop="articleBody">
+                <section class="page__content"  itemprop="articleBody">
                     <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="post__thumbnail">
                         <?php the_post_thumbnail(); ?>

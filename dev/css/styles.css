@@ -65,7 +65,8 @@ template {
 
 a {
   background-color: transparent;
-  color: #00f; }
+  color: #00f;
+  cursor: pointer; }
   a:hover,
   a:focus {
     outline: 0;
@@ -181,7 +182,8 @@ sub {
 img {
   max-width: 100%;
   height: auto;
-  border: 0; }
+  border: 0;
+  vertical-align: bottom; }
 
 svg:not(:root) {
   overflow: hidden; }
@@ -285,9 +287,34 @@ select,
   .textbox:active,
   .textbox:focus {
     outline: none; }
+  input[type="text"] :-ms-input-placeholder,
+  input[type="date"] :-ms-input-placeholder,
+  input[type="time"] :-ms-input-placeholder,
+  input[type="datetime"] :-ms-input-placeholder,
+  input[type="datetime-local"] :-ms-input-placeholder,
+  input[type="url"] :-ms-input-placeholder,
+  input[type="email"] :-ms-input-placeholder,
+  input[type="number"] :-ms-input-placeholder,
+  input[type="search"] :-ms-input-placeholder,
+  input[type="file"] :-ms-input-placeholder,
+  input[type="password"] :-ms-input-placeholder,
+  select :-ms-input-placeholder,
+  .textbox :-ms-input-placeholder {
+    color: gray;
+    font-size: 1em;
+    font-style: normal;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif; }
 
 textarea {
-  display: block; }
+  display: block;
+  resize: none; }
+  textarea :-ms-input-placeholder {
+    color: gray;
+    font-size: 1em;
+    font-style: normal;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif; }
 
 ::-webkit-input-placeholder {
   color: gray;
@@ -303,13 +330,6 @@ textarea {
   font-family: "Open Sans", sans-serif; }
 
 ::-moz-placeholder {
-  color: gray;
-  font-size: 1em;
-  font-style: normal;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif; }
-
-:-ms-input-placeholder {
   color: gray;
   font-size: 1em;
   font-style: normal;
@@ -332,6 +352,7 @@ input[type="reset"] {
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
   text-transform: none;
   cursor: pointer; }

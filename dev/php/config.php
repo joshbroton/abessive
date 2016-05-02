@@ -35,3 +35,12 @@ if (!function_exists('abessive_remove_width_attribute')) {
         return preg_replace('/(width|height)="\d*"\s/', "", $html);
     }
 }
+
+//Allow SVGs in Media Uploader
+if(!function_exists('abessive_mime_types')) {
+    function abessive_mime_types($mimes)
+    {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+}

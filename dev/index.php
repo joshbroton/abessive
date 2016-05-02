@@ -36,7 +36,6 @@
                     <?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?>
                 </section>
             </footer>
-            <hr />
         </article>
         <?php endwhile; ?>
         <nav class="prev-next-nav">

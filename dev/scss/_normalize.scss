@@ -104,6 +104,7 @@ template {
 a {
     background-color: transparent;
     color: $linkColor;
+    cursor: pointer;
     &:hover,
     &:focus {
         outline: 0;
@@ -250,6 +251,7 @@ img {
     max-width: 100%;
     height: auto;
     border: 0;
+    vertical-align: bottom;
 }
 
 // Correct overflow not hidden in IE 9/10/11.
@@ -362,10 +364,26 @@ select,
         outline: $buttonOutline;
         //outline-color: $buttonOutlineColor;
     }
+
+    :-ms-input-placeholder {
+        color: $textboxPlaceholderColor;
+        font-size: $textboxPlaceholderSize;
+        font-style: $textboxPlaceholderStyle;
+        text-transform: uppercase;
+        font-family: $baseFont;
+    }
 }
 
 textarea {
     display: block;
+    resize: none;
+    :-ms-input-placeholder {
+        color: $textboxPlaceholderColor;
+        font-size: $textboxPlaceholderSize;
+        font-style: $textboxPlaceholderStyle;
+        text-transform: uppercase;
+        font-family: $baseFont;
+    }
 }
 
 // These have to be separate
@@ -393,14 +411,6 @@ textarea {
     font-family: $baseFont;
 }
 
-:-ms-input-placeholder {
-    color: $textboxPlaceholderColor;
-    font-size: $textboxPlaceholderSize;
-    font-style: $textboxPlaceholderStyle;
-    text-transform: uppercase;
-    font-family: $baseFont;
-}
-
 button,
 .button,
 input[type="button"],
@@ -418,6 +428,7 @@ input[type="reset"] {
     font-family: $buttonFont;
     font-size: $buttonFontSize;
     font-weight: $buttonFontWeight;
+    text-align: center;
     text-decoration: $buttonTextDecoration;
     text-transform: $buttonTextTransform;
     cursor: pointer;

@@ -9,3 +9,5 @@ build/
 build*.zip
 
 **/*.map
+
+.DS_Store

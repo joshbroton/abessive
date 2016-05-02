@@ -6,6 +6,7 @@
 include_once('php/scripts-styles.php');
 include_once('php/menus.php');
 include_once('php/config.php');
+include_once('php/sidebar.php');
 
 /**
  * abessive_theme_init()
@@ -38,8 +39,10 @@ if (!function_exists('abessive_theme_init')) {
         add_theme_support('menus');
         // automatic feeds
         add_theme_support('automatic-feed-links');
+        // SVG uploads to admin
+        add_filter('upload_mimes', 'abessive_mime_types');
         // Remove the admin bar
-        //show_admin_bar(false); // Uncomment this line to remove the admin bar
+        show_admin_bar(false); // Uncomment this line to remove the admin bar
     }
 }
 

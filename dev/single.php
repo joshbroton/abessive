@@ -18,7 +18,7 @@
                         <span class="byline__author"><?php the_author_posts_link(); ?></span>
                     </aside>
                 </header>
-                <section class="post__content clearfix"  itemprop="articleBody">
+                <section class="post__content"  itemprop="articleBody">
                     <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="content__thumbnail post__thumbnail">
                         <?php the_post_thumbnail(); ?>

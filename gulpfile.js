@@ -11,11 +11,16 @@ var gulp            = require('gulp'),
     htmlreplace     = require('gulp-html-replace'),
     zip             = require('gulp-zip'),
     eslint          = require('gulp-eslint'),
-    scsslint        = require('gulp-scss-lint');
+    scsslint        = require('gulp-scss-lint'),
+    tinify          = require('gulp-tinify');
 
 var roots = {
     dev: './dev/',
     build: './build/'
+};
+
+var apiKeys = {
+    tinypng: ''
 };
 
 gulp.task('connect', ['sass', 'babel'], function() {
@@ -26,7 +31,8 @@ gulp.task('connect', ['sass', 'babel'], function() {
 });
 
 gulp.task('html', function() {
-    gulp.src(roots.dev + '*.html')
+    gulp.src([roots.dev + '*.html',
+              roots.dev + '**/*.php'])
         .pipe(connect.reload());
 });
 
@@ -68,14 +74,6 @@ gulp.task('clean', ['sass', 'babel'], function() {
                .pipe(clean());
 });
 
-gulp.task('clean-unminified', ['build-copy', 'minify-css', 'uglify'], function() {
-    return gulp.src([
-                    roots.build + 'css/styles.css',
-                    roots.build + 'js/site/app.js'
-               ])
-               .pipe(clean());
-});
-
 gulp.task('build-copy', ['clean'], function() {
     return gulp.src([
                     roots.dev + '**/*',
@@ -89,24 +87,13 @@ gulp.task('build-copy', ['clean'], function() {
 gulp.task('minify-css', ['build-copy'], function() {
     return gulp.src(roots.build + 'css/styles.css')
                .pipe(minifyCss())
-               .pipe(rename({suffix: '.min'}))
                .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('uglify', ['build-copy'], function() {
     return gulp.src(roots.build + 'js/site/**/*.js')
                .pipe(uglify())
-               .pipe(rename({suffix: '.min'}))
                .pipe(gulp.dest('build/js/site'));
-});
-
-gulp.task('html-replace', ['build-copy'], function() {
-    gulp.src(roots.build + 'index.html')
-        .pipe(htmlreplace({
-            'css': 'css/styles.min.css',
-            'js': 'js/site/app.min.js'
-        }))
-        .pipe(gulp.dest('build/'))
 });
 
 gulp.task('zip', ['html-replace', 'clean-unminified'], function() {
@@ -131,7 +118,7 @@ gulp.task('scsslint', ['eslint'], function() {
 
 gulp.task('start', ['watch']);
 
-gulp.task('build', ['clean', 'build-copy', 'minify-css', 'uglify', 'html-replace', 'clean-unminified', 'zip']);
+gulp.task('build', ['clean', 'build-copy', 'minify-css', 'uglify', 'tinify']);
 
 gulp.task('lint', ['eslint', 'scsslint']);
 
