@@ -105,6 +105,7 @@ a {
     background-color: transparent;
     color: $linkColor;
     cursor: pointer;
+    font-weight: $linkWeight;
     &:hover,
     &:focus {
         outline: 0;

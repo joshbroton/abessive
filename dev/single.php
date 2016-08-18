@@ -3,7 +3,7 @@
 <?php get_template_part('templates/header'); ?>
 
 <section class="content--wrapper">
-    <main class="content" role="main">
+    <main class="content" id="main" role="main">
         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                 <header class="content__header post__header">
@@ -21,7 +21,7 @@
                 <section class="post__content"  itemprop="articleBody">
                     <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="content__thumbnail post__thumbnail">
-                        <?php the_post_thumbnail(); ?>
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id($post->ID) , '_wp_attachment_image_alt', true); ?>" />
                     </figure>
                     <?php endif; ?>
                     <div class="content--inner post__content--inner">

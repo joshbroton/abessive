@@ -3,7 +3,7 @@
 <?php get_template_part('templates/header'); ?>
 
 <section class="content--wrapper">
-    <main class="content" role="main">
+    <main class="content" id="main" role="main">
         <?php while(have_posts()) : the_post(); ?>
 
         <?php endwhile; ?>

@@ -1,3 +1,26 @@
+a.skip-nav-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, -100%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    &:focus,
+    &:active {
+        left: 1rem;
+        top: 1rem;
+        transform: translate(0, 0);
+        width: auto;
+        height: auto;
+        padding: .5rem 3rem;
+        box-shadow: 0 0 .5rem red;
+        opacity: 1;
+    }
+}
+
 .youtube {
     position: relative;
     z-index: 1;

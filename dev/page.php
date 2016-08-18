@@ -3,9 +3,9 @@
 <?php get_template_part('templates/header'); ?>
 
 <section class="content--wrapper">
-    <main class="content" role="main">
+    <main class="content" id="main" role="main">
         <?php while(have_posts()) : the_post(); ?>
-            <article id="page-<?php the_ID(); ?>" <?php post_class('page'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+            <article id="page-<?php the_ID(); ?>" <?php post_class('page__content--wrapper'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                 <header class="content__header page__header">
                     <h1 class="content__title page__title" title="<?php the_title_attribute(); ?>" itemprop="headline">
                         <?php the_title(); ?>
@@ -14,7 +14,7 @@
                 <section class="page__content"  itemprop="articleBody">
                     <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="post__thumbnail">
-                        <?php the_post_thumbnail(); ?>
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id($post->ID) , '_wp_attachment_image_alt', true); ?>" />
                     </figure>
                     <?php endif; ?>
                     <div class="content--inner page__content--inner">

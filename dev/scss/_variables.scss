@@ -16,7 +16,7 @@ $largeMobileBreakpoint: 29.5em; 	// <472px
 $smallTabletBreakpoint: 36.5em; 	// <592px
 $tabletBreakpoint: 47.5em;			// <768px
 $desktopBreakpoint: 63em;			// <1024px
-$widescreenBreakpoint: 79.5em;		// <1280px
+$widescreenBreakpoint: 85em;		// <1366px
 $superWideBreakpoint: 112.5em;		// <1808px
 
 // Root
@@ -36,32 +36,33 @@ $baseLineHeight: 1.35;
 // Heading Typography
 $headingFont: $baseFont;
 $headingFontColor: $baseFontColor;
+$headingFontWeight: normal;
 $headingLineHeight: 1.1;
 $headingTextShadow: none;
 
 $h1Color: $headingFontColor;
 $h1Size: 1.875em;
-$h1FontWeight: 300;
+$h1FontWeight: $headingFontWeight;
 
 $h2Color: $headingFontColor;
 $h2Size: 1.5em;
-$h2FontWeight: 300;
+$h2FontWeight: $headingFontWeight;
 
 $h3Color: $headingFontColor;
 $h3Size: 1.375em;
-$h3FontWeight: 300;
+$h3FontWeight: $headingFontWeight;
 
 $h4Color: $headingFontColor;
 $h4Size: 1.25em;
-$h4FontWeight: 300;
+$h4FontWeight: $headingFontWeight;
 
 $h5Color: $headingFontColor;
 $h5Size: 1.125em;
-$h5FontWeight: 300;
+$h5FontWeight: $headingFontWeight;
 
 $h6Color: $headingFontColor;
 $h6Size: 1em;
-$h6FontWeight: 300;
+$h6FontWeight: $headingFontWeight;
 
 $codeFont: monospace;
 

@@ -21,9 +21,10 @@
     <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 </head>
 <body <?php body_class(); ?>>
-<!__[if lt IE 8]>
+<!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]__>
+<![endif]-->
+<a class="button skip-nav-link" href="#main">Skip to main content</a>
 <div class="wrapper">
     <header class="body__header" role="banner">
         <?php if(is_front_page()) : ?>
