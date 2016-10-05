@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <!__ METADATA __>
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <!__ ICONS __>
-    <link href="<?php echo get_template_directory_uri(); ?>img/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" rel="shortcut icon">
     <link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png"         rel="apple-touch-icon" />
     <link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-76x76.png"   rel="apple-touch-icon" sizes="76x76" />
     <link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
