@@ -46,4 +46,14 @@
             endif;
             ?>
         </nav>
+
+        <button id="openCloseMenu" class="open-close-menu">
+            <div class="open-close-menu_inner">
+                <div class="menu-line line1"></div>
+                <div class="menu-line line2">
+                    <div class="menu-line line4"></div>
+                </div>
+                <div class="menu-line line3"></div>
+            </div>
+        </button>
     </header>

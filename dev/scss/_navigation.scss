@@ -1,0 +1,71 @@
+// MENU BUTTON STYLES
+.open-close-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+    display: inline-block;
+    height: $siteHeaderHeightMobile;
+    width: (85rem/16);
+    margin: 0;
+    margin-right: .5rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    vertical-align: top;
+    &:hover,
+    &:focus,
+    &:active {
+        border: 0;
+        outline: 0;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+.open-close-menu {
+    right: 0;
+}
+
+.open-close-menu_inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: (35rem/16);
+    height: (23rem/16);
+    padding: 0;
+    .menu-line {
+        width: 100%;
+        height: (3rem/16);
+        background: $siteBlue;
+        margin-bottom: (7rem/16);
+        &.line3 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.menu-line {
+    transform-origin: 50% 50%;
+    transition: all .3s;
+}
+
+.open-menu {
+    overflow: hidden;
+    .line1 {
+        transform: scale(0, 0);
+    }
+    .line2 {
+        transform: rotate(-45deg);
+        width: 110%;
+        margin-left: -5%;
+    }
+    .line3 {
+        transform: scale(0, 0);
+    }
+    .line4 {
+        transform: rotate(450deg);
+    }
+}
